@@ -16,6 +16,7 @@ let nums = [1, 1, 2];
 console.log(removeDuplicates(nums)); // 2
 
 
+
 // 02. Binary Search
 
 var search = function(nums, target) {
@@ -33,3 +34,16 @@ var search = function(nums, target) {
 };
 
 console.log(search([-1, 0, 3, 5, 9, 12], 9)); // 4
+
+
+
+// 03. Search Insert Position
+
+var searchInsert = function(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] >= target) return i;
+    }
+    return nums.length;
+};
+
+console.log(searchInsert([1, 3, 5, 6], 5)); 
