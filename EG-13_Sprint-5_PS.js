@@ -77,7 +77,6 @@ console.log(maxDepth(root));
 
 // 05. Invert Binary Tree
 
-
 var invertTree = function(root) {
     if (root === null) {
         return null;
@@ -92,3 +91,27 @@ var invertTree = function(root) {
 
     return root;
 };
+
+
+
+// 06. Product of Array Except Self
+
+var productExceptSelf = function(nums) {
+    const result = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        let product = 1;
+
+        for (let j = 0; j < nums.length; j++) {
+            if (i !== j) {
+                product *= nums[j];
+            }
+        }
+
+        result.push(product);
+    }
+
+    return result;
+};
+
+console.log(productExceptSelf([1, 2, 3, 4]));
