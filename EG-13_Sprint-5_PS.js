@@ -234,3 +234,29 @@ var checkSubarraySum = function (nums, k) {
 };
 
 console.log(checkSubarraySum([23, 2, 4, 6, 7], 6));
+
+
+
+
+// 10. Daily Temperatures
+
+var dailyTemperatures = function(temperatures) {
+    let result = new Array(temperatures.length).fill(0);
+    let stack = [];
+
+    for (let i = 0; i < temperatures.length; i++) {
+        while (
+            stack.length &&
+            temperatures[i] > temperatures[stack[stack.length - 1]]
+        ) {
+            let index = stack.pop();
+            result[index] = i - index;
+        }
+
+        stack.push(i);
+    }
+
+    return result;
+};
+
+console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]));
