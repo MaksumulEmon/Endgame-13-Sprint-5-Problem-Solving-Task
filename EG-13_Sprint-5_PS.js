@@ -77,7 +77,7 @@ console.log(maxDepth(root));
 
 // 05. Invert Binary Tree
 
-var invertTree = function(root) {
+var invertTree = function (root) {
     if (root === null) {
         return null;
     }
@@ -96,7 +96,7 @@ var invertTree = function(root) {
 
 // 06. Product of Array Except Self
 
-var productExceptSelf = function(nums) {
+var productExceptSelf = function (nums) {
     const result = [];
 
     for (let i = 0; i < nums.length; i++) {
@@ -118,7 +118,9 @@ console.log(productExceptSelf([1, 2, 3, 4]));
 
 
 
-var rotate = function(nums, k) {
+// 07. Rotate Array
+
+var rotate = function (nums, k) {
     k = k % nums.length;
 
     nums.reverse();
@@ -149,3 +151,52 @@ const nums = [1, 2, 3, 4, 5, 6, 7];
 rotate(nums, 3);
 
 console.log(nums);
+
+
+
+
+
+// 08. Min Stack
+
+var MinStack = function() {
+    this.stack = [];
+    this.min = [];
+};
+
+MinStack.prototype.push = function(val) {
+    this.stack.push(val);
+
+    if (this.min.length === 0 || val <= this.min[this.min.length - 1]) {
+        this.min.push(val);
+    }
+};
+
+MinStack.prototype.pop = function() {
+    let val = this.stack.pop();
+
+    if (val === this.min[this.min.length - 1]) {
+        this.min.pop();
+    }
+};
+
+MinStack.prototype.top = function() {
+    return this.stack[this.stack.length - 1];
+};
+
+MinStack.prototype.getMin = function() {
+    return this.min[this.min.length - 1];
+};
+
+
+// Test
+let minStack = new MinStack();
+
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+
+console.log(minStack.getMin());
+
+minStack.pop();
+
+console.log(minStack.getMin());
