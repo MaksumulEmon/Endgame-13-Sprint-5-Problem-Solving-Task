@@ -12,8 +12,8 @@ var removeDuplicates = function (nums) {
     return k;
 };
 
-let nums = [1, 1, 2];
-console.log(removeDuplicates(nums)); // 2
+// let nums = [1, 1, 2];
+// console.log(removeDuplicates(nums)); 
 
 
 
@@ -115,3 +115,37 @@ var productExceptSelf = function(nums) {
 };
 
 console.log(productExceptSelf([1, 2, 3, 4]));
+
+
+
+var rotate = function(nums, k) {
+    k = k % nums.length;
+
+    nums.reverse();
+
+    // Reverse first k elements
+    let left = 0;
+    let right = k - 1;
+
+    while (left < right) {
+        [nums[left], nums[right]] = [nums[right], nums[left]];
+        left++;
+        right--;
+    }
+
+    // Reverse remaining elements
+    left = k;
+    right = nums.length - 1;
+
+    while (left < right) {
+        [nums[left], nums[right]] = [nums[right], nums[left]];
+        left++;
+        right--;
+    }
+};
+
+const nums = [1, 2, 3, 4, 5, 6, 7];
+
+rotate(nums, 3);
+
+console.log(nums);
