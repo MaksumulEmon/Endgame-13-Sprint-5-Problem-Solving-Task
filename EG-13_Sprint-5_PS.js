@@ -54,7 +54,7 @@ console.log(searchInsert([1, 3, 5, 6], 5));
 
 // 04. Maximum Depth of Binary Tree
 
-var maxDepth = function(root) {
+var maxDepth = function (root) {
     if (!root) return 0;
     return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };
@@ -69,4 +69,26 @@ const root = {
     }
 };
 
-console.log(maxDepth(root)); // 3
+console.log(maxDepth(root));
+
+
+
+
+
+// 05. Invert Binary Tree
+
+
+var invertTree = function(root) {
+    if (root === null) {
+        return null;
+    }
+
+    // Swap left and right children
+    [root.left, root.right] = [root.right, root.left];
+
+    // Invert both subtrees
+    invertTree(root.left);
+    invertTree(root.right);
+
+    return root;
+};
