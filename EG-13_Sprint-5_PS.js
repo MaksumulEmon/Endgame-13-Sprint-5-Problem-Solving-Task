@@ -158,12 +158,12 @@ console.log(nums);
 
 // 08. Min Stack
 
-var MinStack = function() {
+var MinStack = function () {
     this.stack = [];
     this.min = [];
 };
 
-MinStack.prototype.push = function(val) {
+MinStack.prototype.push = function (val) {
     this.stack.push(val);
 
     if (this.min.length === 0 || val <= this.min[this.min.length - 1]) {
@@ -171,7 +171,7 @@ MinStack.prototype.push = function(val) {
     }
 };
 
-MinStack.prototype.pop = function() {
+MinStack.prototype.pop = function () {
     let val = this.stack.pop();
 
     if (val === this.min[this.min.length - 1]) {
@@ -179,11 +179,11 @@ MinStack.prototype.pop = function() {
     }
 };
 
-MinStack.prototype.top = function() {
+MinStack.prototype.top = function () {
     return this.stack[this.stack.length - 1];
 };
 
-MinStack.prototype.getMin = function() {
+MinStack.prototype.getMin = function () {
     return this.min[this.min.length - 1];
 };
 
@@ -200,3 +200,37 @@ console.log(minStack.getMin());
 minStack.pop();
 
 console.log(minStack.getMin());
+
+
+
+
+
+
+
+
+// 09. Continuous Subarray Sum
+
+var checkSubarraySum = function (nums, k) {
+    let sum = 0;
+    let map = new Map();
+
+    map.set(0, -1);
+
+    for (let i = 0; i < nums.length; i++) {
+        sum += nums[i];
+
+        let remainder = sum % k;
+
+        if (map.has(remainder)) {
+            if (i - map.get(remainder) >= 2) {
+                return true;
+            }
+        } else {
+            map.set(remainder, i);
+        }
+    }
+
+    return false;
+};
+
+console.log(checkSubarraySum([23, 2, 4, 6, 7], 6));
