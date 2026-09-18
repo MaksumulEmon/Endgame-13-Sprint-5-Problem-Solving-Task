@@ -1,6 +1,6 @@
 // 01. Remove Duplicates from Sorted Array
 
-var removeDuplicates = function(nums) {
+var removeDuplicates = function (nums) {
     let k = 1;
 
     for (let i = 1; i < nums.length; i++) {
@@ -19,7 +19,7 @@ console.log(removeDuplicates(nums)); // 2
 
 // 02. Binary Search
 
-var search = function(nums, target) {
+var search = function (nums, target) {
     let left = 0, right = nums.length - 1;
 
     while (left <= right) {
@@ -39,11 +39,34 @@ console.log(search([-1, 0, 3, 5, 9, 12], 9)); // 4
 
 // 03. Search Insert Position
 
-var searchInsert = function(nums, target) {
+var searchInsert = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] >= target) return i;
     }
     return nums.length;
 };
 
-console.log(searchInsert([1, 3, 5, 6], 5)); 
+console.log(searchInsert([1, 3, 5, 6], 5));
+
+
+
+
+
+// 04. Maximum Depth of Binary Tree
+
+var maxDepth = function(root) {
+    if (!root) return 0;
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+};
+
+const root = {
+    val: 3,
+    left: { val: 9, left: null, right: null },
+    right: {
+        val: 20,
+        left: { val: 15, left: null, right: null },
+        right: { val: 7, left: null, right: null }
+    }
+};
+
+console.log(maxDepth(root)); // 3
