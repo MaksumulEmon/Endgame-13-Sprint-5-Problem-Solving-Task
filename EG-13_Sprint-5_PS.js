@@ -33,7 +33,7 @@ var search = function (nums, target) {
     return -1;
 };
 
-console.log(search([-1, 0, 3, 5, 9, 12], 9)); // 4
+// console.log(search([-1, 0, 3, 5, 9, 12], 9)); // 4
 
 
 
@@ -46,7 +46,7 @@ var searchInsert = function (nums, target) {
     return nums.length;
 };
 
-console.log(searchInsert([1, 3, 5, 6], 5));
+// console.log(searchInsert([1, 3, 5, 6], 5));
 
 
 
@@ -69,7 +69,7 @@ const root = {
     }
 };
 
-console.log(maxDepth(root));
+// console.log(maxDepth(root));
 
 
 
@@ -114,7 +114,7 @@ var productExceptSelf = function (nums) {
     return result;
 };
 
-console.log(productExceptSelf([1, 2, 3, 4]));
+// console.log(productExceptSelf([1, 2, 3, 4]));
 
 
 
@@ -146,11 +146,11 @@ var rotate = function (nums, k) {
     }
 };
 
-const nums = [1, 2, 3, 4, 5, 6, 7];
+// const nums = [1, 2, 3, 4, 5, 6, 7];
 
-rotate(nums, 3);
+// rotate(nums, 3);
 
-console.log(nums);
+// console.log(nums);
 
 
 
@@ -233,7 +233,7 @@ var checkSubarraySum = function (nums, k) {
     return false;
 };
 
-console.log(checkSubarraySum([23, 2, 4, 6, 7], 6));
+// console.log(checkSubarraySum([23, 2, 4, 6, 7], 6));
 
 
 
@@ -259,4 +259,4 @@ var dailyTemperatures = function(temperatures) {
     return result;
 };
 
-console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]));
+// console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]));
